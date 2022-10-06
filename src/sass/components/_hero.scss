@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.hero {
+  background-image: linear-gradient(345deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url('../../images/hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &--text {
+    padding: 3em 0 3.25em;
+    color: $text-light;
+    justify-content: center;
+    flex-direction: column;
+
+    &__title {
+      font-size: 1.625rem;
+
+      @media (min-width: 400px) {
+        font-size: 2rem;
+      }
+    }
+
+    &__subtitle {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        margin: 0 auto;
+        width: 100%;
+        bottom: -2px;
+        left: 0;
+        border-top: 2px solid $main-50;
+      }
+    }
+  }
+}

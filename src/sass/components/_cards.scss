@@ -1,0 +1,118 @@
+@use '../abstracts' as *;
+
+.card {
+  box-shadow: 2px 2px 4px 0 $grey;
+  border: 1px solid $grey-light;
+  border-radius: 0.5em;
+  overflow: hidden;
+
+  &:hover  {
+    border: 1px solid $main;
+    box-shadow: 2px 2px 4px 0 $grey-dark;
+  }
+
+  &:hover &__price  {
+    transform: scale(1.4);
+    transition: all 0.1s ease-in-out;
+  }
+
+  &__content,
+  &__final {
+    width: 85%;
+  }
+
+  &__final {
+    margin: 0 auto;
+  }
+
+  &__content {
+    margin: 0.5em auto 0;
+    position: relative;
+  }
+
+  &__name {
+    color: $main;
+  }
+
+  &__price {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 0 0.35em;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &-v {
+      font-size: 0.75rem;
+      margin-right: 0.5em;
+    }
+
+    &-s {
+      color: $main;
+      font-size: 1rem;
+      margin-right: 2px;
+    }
+  }
+
+  &--home,
+  &--detail {
+    width: 100%;
+    text-align: left;
+  }
+
+  &--home {
+    max-width: 20rem;
+    padding-bottom: 1em;
+
+    @media (min-width: 600px) {
+      max-width: 18rem;
+    }
+
+    @media (min-width: 1000px) {
+      max-width: 16rem;
+    }
+
+    &__wrapper {
+      background: white;
+      position: absolute;
+      bottom: -1.5em;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+
+      &-title {
+        font-size: 1.35rem;
+      }
+    }
+  }
+
+  &--detail {
+
+    padding-bottom: 1em;
+
+    @media (min-width: 400px) {
+      padding-bottom: 0;
+    }
+
+    &__wrapper {
+      background: white;
+      position: absolute;
+      bottom: -1.5em;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1rem;
+
+      @media (min-width: 400px) {
+        font-size: 1.25rem;
+      }
+
+      &-title {
+        font-size: 1.35rem;
+
+        @media (min-width: 400px) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

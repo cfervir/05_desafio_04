@@ -1,0 +1,96 @@
+@use '../abstracts' as *;
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  height: 2.5em;
+  border-radius: 0.5em;
+  font-weight: 700;
+  color: $text-light;
+  margin-top: 0.375em;
+
+  & + & {
+    margin-left: 0.75em;
+  }
+
+  &--between {
+    position: relative;
+    top: 4px;
+    line-height: 1;
+    margin: 0 0.3em;
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+
+  &--info,
+  &--info-back,
+  &--info-remove {
+    width: 100%;
+    max-width: 6.5rem;
+
+    @media (min-width: 1000px) {
+      max-width: 6rem;
+    }
+  }
+
+  &--info {
+    background: $main;
+  }
+
+  &--add,
+  &--remove {
+    width: 2.5em;
+  }
+
+  &--add,
+  &--info-remove {
+    background: $more;
+  }
+
+  &--info-back {
+    background: $badge-border;
+  }
+
+  &--remove {
+    background: $darker-main;
+  }
+
+  &--wrapper {
+    text-align: center;
+  }
+}
+
+.link {
+  font-weight: 300;
+  color: $text-light;
+  text-decoration: none;
+  
+  &--active {
+    font-weight: 700;
+  }
+
+  &--decor {
+    position: relative;
+    outline: none;
+  }
+
+  &--decor::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: $text-light;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s ease-in;
+  }
+  
+  &--decor:hover::after,
+  &--decor:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}

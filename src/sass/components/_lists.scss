@@ -1,0 +1,43 @@
+.list {
+  margin: 1.5em auto 1em;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+
+  // &__item::before {
+  //   content: '🍕';
+  //   margin-right: 0.5em;
+  // }
+
+  &__item:hover .ingredient {
+    transition: all 0.3s ease-in-out;
+    animation: 0.5s growIngredients forwards;
+  }
+
+  &__item:hover {
+    font-weight: 700;
+  }
+}
+
+.ingredient {
+  width: 100%;
+  max-width: 2.5em;
+  display: inline-block;
+  position: relative;
+  top: 0.85em;
+  margin-right: 0.75em;
+  border-radius: 0 50% 50% 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+@keyframes growIngredients {
+  0% { 
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% { 
+    transform: scale(1.35);
+  }
+}

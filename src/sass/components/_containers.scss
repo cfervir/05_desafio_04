@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.container {
+  max-width: calc(800px + 5em);
+  margin: 0 1em;
+  text-align: center;
+
+  @media (min-width: 1000px) {
+    margin: 0 auto;
+  }
+    
+  &--flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &--nav {
+    justify-content: space-between;
+    padding: 1.125em 0 1em;
+    color: $text-light;
+
+    @media (min-width: 1000px) {
+      padding: 1.125em 1.5em 1em;
+    }
+  }
+
+  &--cards {
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    
+    &, &-detail {
+      margin-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    &-detail {
+      justify-content: center;
+    }
+  }
+}
+
+.nav {
+  background: $darker-main;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  &--cart {
+    text-align: right;
+  }
+}
