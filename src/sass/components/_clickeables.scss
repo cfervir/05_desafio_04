@@ -9,7 +9,7 @@
   font-weight: 700;
   color: $text-light;
 
-  &:last-child {
+  & + & {
     margin-left: 0.75em;
   }
 
@@ -24,7 +24,7 @@
 
   &--info,
   &--info-back,
-  &--info-remove {
+  &--info-add {
     width: 100%;
     max-width: 6.5rem;
 
@@ -43,7 +43,8 @@
   }
 
   &--add,
-  &--info-remove {
+  &--remove,
+  &--info-add {
     background: $more;
   }
 
@@ -51,7 +52,7 @@
     background: $badge-border;
   }
 
-  &--remove {
+  &--add {
     background: $darker-main;
   }
 

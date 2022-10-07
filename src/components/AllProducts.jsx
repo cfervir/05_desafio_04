@@ -33,7 +33,7 @@ export default function Render() {
             <h2 className="card__price"><span className="card__price-v">valor</span> <span className="card__price-s">$</span>{ locale(pizza.price) }</h2>
             <div className="btn--wrapper">
               <button className="btn btn--info" onClick={ () => pizzaLink(`/pizza/${ pizza.id }`) }>Ver más</button>
-              <button className="btn btn--info-remove" onClick={ () => addItem(pizza) }>Añadir</button>
+              <button className="btn btn--info-add" onClick={ () => addItem(pizza) }>Añadir</button>
             </div>
           </div>
         </div>

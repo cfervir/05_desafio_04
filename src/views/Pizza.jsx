@@ -46,7 +46,7 @@ export default function Pizza() {
               </h2>
               <div className="btn--wrapper__detail">
                 <button className="btn btn--info-back btn--detail" onClick={ () => pizzaLink(`/pizza/`) }>Volver</button>
-                <button className="btn btn--info-remove btn--detail" onClick={ () => addItem(filtered) }>Añadir</button>
+                <button className="btn btn--info-add btn--detail" onClick={ () => addItem(filtered) }>Añadir</button>
               </div>
             </div>
           </div>
