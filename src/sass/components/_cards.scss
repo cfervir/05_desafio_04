@@ -17,12 +17,21 @@
   }
 
   &__content,
-  &__final {
+  &__final,
+  &__final--detail {
     width: 85%;
+    margin: 0 auto;
   }
 
   &__final {
-    margin: 0 auto;
+    &--detail {
+      @media (min-width: 650px) {
+        width: initial;
+        padding: 0 1em 1em 0.5em;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
   }
 
   &__content {
@@ -43,15 +52,42 @@
     font-size: 1.5rem;
     text-align: center;
 
+    &--detail {
+      margin: 0 0 0.35em;
+      font-size: 2rem;
+
+      @media (min-width: 650px) {
+        margin: 0 auto;
+        font-size: 2.75rem;
+        line-height: 1;
+      }
+
+      @media (min-width: 800px) {
+        font-size: 4rem;
+      }
+    }
+
     &-v {
       font-size: 0.75rem;
       margin-right: 0.5em;
+
+      &-d {
+        @media (min-width: 800px) {
+          font-size: 1rem;
+        }
+      }
     }
 
     &-s {
       color: $main;
       font-size: 1rem;
       margin-right: 2px;
+
+      &-d {
+        @media (min-width: 800px) {
+          font-size: 2rem;
+        }
+      }
     }
   }
 
@@ -88,22 +124,74 @@
 
   &--detail {
 
+    position: relative;
+    flex-direction: column;
     padding-bottom: 1em;
 
-    @media (min-width: 400px) {
+    @media (min-width: 650px) {
       padding-bottom: 0;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    &__img {
+      object-fit: cover;
+    }
+
+    &__info-w {
+      @media (min-width: 650px) {
+        width: 60%;
+      }
+    }
+
+    &__desc {
+      z-index: 1;
+      margin-top: 1em;
+      padding: 0 1.5em;
+      text-align: justify;
+    }
+
+    &__list {
+      align-self: flex-start;
+      width: 100%;
+
+      &-ing {
+        margin: 0 0 0.3em 1.5rem;
+        font-size: 1.125rem;
+      }
+
+      @media (min-width: 650px) {
+        width: initial;
+      }
     }
 
     &__wrapper {
       background: white;
       position: absolute;
-      bottom: -1.5em;
+      bottom: -1em;
+      left: 1em;
       border-radius: 0.5em;
       padding: 0.5em 1em;
-      font-size: 1rem;
 
       @media (min-width: 400px) {
         font-size: 1.25rem;
+      }
+
+      @media (min-width: 650px) {
+        bottom: initial;
+        left: initial;
+        right: -1em;
+        top: 1em;
+      }
+
+      &-head {
+        position: relative;
+        z-index: 1;
+
+        @media (min-width: 650px) {
+          display: flex;
+          width: 40%;
+        }
       }
 
       &-title {

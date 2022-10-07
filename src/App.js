@@ -27,7 +27,7 @@ function App() {
           throw Error(`Status: ${response.status}`);
         }
         const data = await response.json();
-        const fixedImg = data.map(u => u.id !== "P006" ? u : u = { ...u, img: `${Images.missing}`});
+        const fixedImg = data.map(u => u.id !== "P006" ? u : u = { ...u, img: `${ Images.missing }`});
         setPizzaData(fixedImg);
       }
     } catch (e) {
@@ -44,7 +44,7 @@ function App() {
     if (isRepeated) {
       setTotal(
         total.map(addNow =>
-          addNow.id === item.id ? {...isRepeated, qty: isRepeated.qty + 1, price: isRepeated.price + item.price } : addNow 
+          addNow.id === item.id ? { ...isRepeated, qty: isRepeated.qty + 1, price: isRepeated.price + item.price } : addNow 
         )
       );
     } else {
@@ -55,7 +55,7 @@ function App() {
   const removeItem = (item) => {
     const isThere = total.find(remove => remove.id === item.id);
     if (isThere.qty === 1) {
-      setTotal(total.filter(removeChange => removeChange.id !== item.id));
+      setTotal(total.filter(removeChk => removeChk.id !== item.id));
     } else {
       setTotal(
         total.map(removeNow =>

@@ -24,6 +24,14 @@
     }
   }
 
+  &--logo {
+    max-width: 9rem;
+
+    @media (min-width: 400px) {
+      max-width: initial;
+    }
+  }
+
   &--cards {
     flex-wrap: wrap;
     gap: 1em;
@@ -44,7 +52,7 @@
   background: $darker-main;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 
   &--cart {
     text-align: right;

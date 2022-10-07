@@ -8,9 +8,8 @@
   border-radius: 0.5em;
   font-weight: 700;
   color: $text-light;
-  margin-top: 0.375em;
 
-  & + & {
+  &:last-child {
     margin-left: 0.75em;
   }
 
@@ -57,7 +56,27 @@
   }
 
   &--wrapper {
-    text-align: center;
+    &, &__detail {
+      text-align: center;
+    }
+
+    &__detail {
+      @media (min-width: 650px) {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 6rem;
+      }
+    }
+  }
+
+  &--detail {
+    @media (min-width: 650px) {
+      margin-left: 0 !important;
+
+      & + & {
+        margin-bottom: 0.5em;
+      }
+    }
   }
 }
 
