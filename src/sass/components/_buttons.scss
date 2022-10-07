@@ -1,0 +1,138 @@
+@use '../abstracts' as *;
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  height: 2.5em;
+  border-radius: 0.5em;
+  font-weight: 700;
+  color: $text-light;
+
+  & + & {
+    margin-left: 0.75em;
+  }
+
+  &--between {
+    position: relative;
+    top: 4px;
+    line-height: 1;
+    margin: 0 0.3em;
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+
+  &--info,
+  &--info-back,
+  &--info-add {
+    width: 100%;
+    max-width: 6.5rem;
+
+    @media (min-width: 1000px) {
+      max-width: 6rem;
+    }
+  }
+
+  &--add,
+  &--remove,
+  &--info,
+  &--info-add,
+  &--info-back {
+    transition: all 0.1s ease-in-out;
+  }
+
+  &--add:hover, &--add:focus,
+  &--remove:hover, &--remove:focus {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &--info-add:hover, &--info-add:focus, 
+  &--info-back:hover, &--info-back:focus,
+  &--info:hover, &--info:focus {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-2px);
+  }
+
+  &--add,
+  &--remove {
+    width: 2.5em;
+  }
+
+  &--remove,
+  &--info-add {
+    background: $more;
+  }
+
+  &--remove:hover,
+  &--remove:focus {
+    background: $text-light;
+    color: $more;
+    box-shadow: 0px 0px 0px 2px inset $more, 0px 2px 4px 0px $grey;
+  }
+
+  &--info-add:hover,
+  &--info-add:focus {
+    background: $text-light;
+    color: $more;
+    box-shadow: 0px 0px 0px 2px inset $more, 0px 2px 4px 0px $grey;
+  }
+
+  &--info {
+    background: $main;
+  }
+
+  &--info:hover,
+  &--info:focus {
+    background: $text-light;
+    color: $main;
+    box-shadow: 0px 0px 0px 2px inset $main, 0px 2px 4px 0px $grey;
+  }
+
+  &--info-back {
+    background: $badge-border;
+  }
+
+  &--info-back:hover,
+  &--info-back:focus {
+    background: $text-light;
+    color: $badge-border;
+    box-shadow: 0px 0px 0px 2px inset $badge-border, 0px 2px 4px 0px $grey;
+  }
+
+  &--add {
+    background: $darker-main;
+  }
+
+  &--add:hover,
+  &--add:focus {
+    background: $text-light;
+    transition: all 0.2s ease-in-out;
+    color: $darker-main;
+    box-shadow: 0px 0px 0px 2px inset $darker-main, 0px 2px 4px 0px $grey;
+  }
+
+  &--wrapper {
+    &, &__detail {
+      text-align: center;
+    }
+
+    &__detail {
+      @media (min-width: 650px) {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 6rem;
+      }
+    }
+  }
+
+  &--detail {
+    @media (min-width: 650px) {
+      margin-left: 0 !important;
+
+      & + & {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+

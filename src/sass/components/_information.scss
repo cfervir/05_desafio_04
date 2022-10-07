@@ -31,20 +31,29 @@
 }
 
 .logo {
-  width: 100%;
-  max-width: 2.5em;
-  position: relative;
-  bottom: 2px;
-  display: inline-block;
+  &, &--big {
+    width: 100%;
+    position: relative;
+  }
 
-  &:hover {
+  &:hover,
+  &--big:hover {
     transform: scale(1.2);
     transition: transform .1s ease-in-out;
   }
+
+  max-width: 2.5em;
+  bottom: 2px;
+  display: inline-block;
 
   &--text {
     margin-left: 0.5em;
     text-align: left;
     line-height: 1.2;
+  }
+
+  &--big {
+    max-width: 5em;
+    margin: 1em auto;
   }
 }

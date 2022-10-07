@@ -1,21 +1,28 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 import PizzaContext from "../PizzaContext";
+import Images from "../images";
 import { locale } from "../helpers";
 
 export default function Cart() {
 
   const { total, pizzaData, addItem, removeItem } = useContext(PizzaContext);
+  const goBack = useNavigate();
 
   if (total.length === 0) {
     return (
-      <div className="container">
-        <p>Cart is empty!</p>
+      <div className="container container--cart">
+        <h1>El carrito está vacio</h1>
+        <p>¡No olvides agregar tu pizza favorita!</p>
+        <img src={ Images.logo } alt="¡Pizzería Mamma Mía!" className="logo--big" />
+        <button className="btn btn--info-back btn--detail" onClick={ () => goBack(`/pizzas/`) }>Volver</button>
       </div>
     );
   };
 
   return (
-    <div className="container">
+    <div className="container container--cart">
       <h1>Pagaaaa</h1>
         { total.map((items, i) => (
           <div key={i}>
