@@ -10,7 +10,7 @@ export default function Navbar() {
   const totalSum = total.reduce((a, b)=> a + b.price, 0);
   const totalQty = total.reduce((a, b)=> a + b.qty, 0);
 
-  const setActiveClass = ({ isActive }) => `link ${( isActive ? 'link--active' : '')}`;
+  const setActiveClass = ({ isActive }) => `link container--flex ${( isActive ? 'link--active' : '')}`;
   
   return (
     <nav className="nav">
@@ -25,7 +25,13 @@ export default function Navbar() {
         </div>
         <div className="nav--cart">
           <NavLink className={ setActiveClass } to="/carrito">
-            <span className="link--decor">Carrito</span> <span title={ `Total $${locale(totalSum)}` } className={`badge ${ totalSum ? '' : 'badge--hidden'}`}>{ totalQty }</span>
+            <div className="link--decor">Carrito</div>
+            <div className={`badge ${ totalSum ? '' : 'badge--hidden'}`}>
+              { totalQty }
+              <div className="badge--tooltip">
+                { `Sub-total $${locale(totalSum)}` }
+              </div>
+            </div>
           </NavLink>
         </div>
       </div>
