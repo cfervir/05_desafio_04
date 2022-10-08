@@ -15,7 +15,7 @@ export default function Cart() {
       if (length - 1 !== i ) {
         return `${capitalize(data)}, `
       } else {
-        return `${capitalize(data)}`;
+        return `${capitalize(data)}.`;
       }
     });
     return list;
@@ -25,7 +25,7 @@ export default function Cart() {
     return (
       <div className="container container--cart">
         <h1>El carrito está vacio</h1>
-        <p>¡No olvides agregar tu pizza favorita!</p>
+        <p>¡No olvides agregar tus pizzas favoritas!</p>
         <img src={ Images.logo } alt="¡Pizzería Mamma Mía!" className="logo--big" />
         <button className="btn btn--info-back btn--detail" onClick={ () => goBack(`/pizzas/`) }>Volver</button>
       </div>
