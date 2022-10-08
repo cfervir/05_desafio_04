@@ -40,16 +40,15 @@
   }
 
   &__qty {
-    margin-top: 1em;
-    align-self: center;
+    margin-top: 0.5em;
+    align-self: flex-end;
     align-items: flex-end;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     &--total {
-      margin-top: 0.5em;
+      margin-bottom: 0.25em;
       font-size: 1.375rem;
       line-height: 1;
-      align-self: center;
 
       &-s {
         font-size: 1.125rem;
@@ -63,11 +62,11 @@
     &--buttons {
       justify-content: space-between;
       align-items: center;
-      min-width: 8rem;
+      min-width: 6.5rem;
     }
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 425px) {
     &__items {
       flex-direction: row;
       justify-content: space-between;
@@ -76,7 +75,6 @@
     &__qty {
       margin-top: 0;
       padding-left: 1em;
-      font-size: 1.125rem;
 
       &--total {
         font-size: 1.125rem;
@@ -103,7 +101,7 @@
   
       &--total {
         margin-right: 1em;
-        margin-top: 0;
+        margin-bottom: 0;
       }
       
       &--buttons {
