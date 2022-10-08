@@ -9,15 +9,15 @@
   &:hover &--tooltip {
     opacity: 1;
     position: absolute;
-    right: -1em;
-    top: 2em;
+    right: 0;
+    top: 1.75em;
     padding: 0.65em 1em;
-    box-shadow: 0px 0px 0px 3px inset $badge, 0px 2px 4px 0px $grey-dark;
+    box-shadow: 0px 0px 0px 3px inset $badge-border, 0px 2px 4px 0px $grey-dark;
     background-color: white;
-    color: $badge;
+    color: $badge-border;
     border-radius: 0.5em;
     min-width: 11em;
-    font-size: 1.375em;
+    font-size: 1.125rem;
     text-align: center;
     display: block;
     transition: opacity 0.1s ease-in-out;
@@ -45,6 +45,7 @@
   &--hidden,
   &--tooltip {
     opacity: 0;
+    display: none;
   }
 
   &--tooltip:hover,

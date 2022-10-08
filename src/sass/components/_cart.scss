@@ -1,0 +1,113 @@
+@use '../abstracts/' as *;
+
+.cart {
+  padding: 1em;
+  margin: 1em 0;
+
+  &__items {
+    flex-direction: column;
+    align-items: flex-start;
+
+    & + & {
+      margin-top: 1.5em;
+    }
+  }
+
+  &__info {
+    text-align: left;
+    align-items: stretch;
+
+    &--img {
+      max-width: 4rem;
+      border-radius: 0.5em;
+      object-fit: cover;
+    }
+
+    &--details {
+      margin-left: 1em;
+    }
+
+    &--list,
+    &--single {
+      font-size: 0.875rem;
+    }
+
+    &--list {
+      * + * {
+        margin-top: 0.2em;
+      }
+    }
+  }
+
+  &__qty {
+    margin-top: 1em;
+    align-self: center;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+
+    &--total {
+      margin-top: 0.5em;
+      font-size: 1.375rem;
+      line-height: 1;
+      align-self: center;
+
+      &-s {
+        font-size: 1.125rem;
+        margin-right: 0.2em;
+        position: relative;
+        bottom: 0.3em;
+        color: $main;
+      }
+    }
+
+    &--buttons {
+      justify-content: space-between;
+      align-items: center;
+      min-width: 8rem;
+    }
+  }
+
+  @media (min-width: 500px) {
+    &__items {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__qty {
+      margin-top: 0;
+      padding-left: 1em;
+      font-size: 1.125rem;
+
+      &--total {
+        font-size: 1.125rem;
+  
+        &-s {
+          font-size: 1rem;
+          margin-right: 0.2em;
+          bottom: 0.15em;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 650px) {
+    &__items {
+      & + & {
+        margin-top: 1.5em;
+      }
+    }
+
+    &__qty {
+      align-self: flex-end;
+      flex-direction: row;
+  
+      &--total {
+        margin-right: 1em;
+        margin-top: 0;
+      }
+      
+      &--buttons {
+      }
+    }
+  }
+}

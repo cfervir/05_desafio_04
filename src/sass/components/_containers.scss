@@ -55,6 +55,7 @@
 
 .nav {
   background: $darker-main;
+  background: linear-gradient(175deg, $darker-main 70%, $darkest-main 100%);
   position: sticky;
   top: 0;
   z-index: 2;

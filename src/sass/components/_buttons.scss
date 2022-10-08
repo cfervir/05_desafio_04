@@ -14,12 +14,9 @@
   }
 
   &--between {
-    position: relative;
-    top: 4px;
     line-height: 1;
-    margin: 0 0.3em;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 
   &--info,
@@ -58,13 +55,24 @@
     width: 2.5em;
   }
 
-  &--remove,
+  &--add,
   &--info-add {
     background: $more;
   }
 
   &--remove:hover,
   &--remove:focus {
+    background: $text-light;
+    color: $darker-main;
+    box-shadow: 0px 0px 0px 2px inset $darker-main, 0px 2px 4px 0px $grey;
+  }
+
+  &--remove {
+    background: $darker-main;
+  }
+
+  &--add:hover,
+  &--add:focus {
     background: $text-light;
     color: $more;
     box-shadow: 0px 0px 0px 2px inset $more, 0px 2px 4px 0px $grey;
@@ -97,18 +105,6 @@
     background: $text-light;
     color: $badge-border;
     box-shadow: 0px 0px 0px 2px inset $badge-border, 0px 2px 4px 0px $grey;
-  }
-
-  &--add {
-    background: $darker-main;
-  }
-
-  &--add:hover,
-  &--add:focus {
-    background: $text-light;
-    transition: all 0.2s ease-in-out;
-    color: $darker-main;
-    box-shadow: 0px 0px 0px 2px inset $darker-main, 0px 2px 4px 0px $grey;
   }
 
   &--wrapper {

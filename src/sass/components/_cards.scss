@@ -5,6 +5,8 @@
   border: 1px solid $grey-light;
   border-radius: 0.5em;
   overflow: hidden;
+  background: $grey-lightest;
+  background: linear-gradient(160deg, $grey-lightest 70%, $grey-lighter 100%);
 
   &:hover  {
     border: 1px solid $main;
