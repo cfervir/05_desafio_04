@@ -2,13 +2,11 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import PizzaContext from "../PizzaContext";
 import Images from "../images";
-import { locale } from "../helpers";
+import { locale, sumPizzas, sumQty } from "../helpers";
 
 export default function Navbar() {
 
   const { total } = useContext(PizzaContext);
-  const totalSum = total.reduce((a, b)=> a + b.price, 0);
-  const totalQty = total.reduce((a, b)=> a + b.qty, 0);
 
   const setActiveClass = ({ isActive }) => `link container--flex ${( isActive ? 'link--active' : '')}`;
   
@@ -26,10 +24,10 @@ export default function Navbar() {
         <div className="nav--cart">
           <NavLink className={ setActiveClass } to="/carrito">
             <div className="link--decor">Carrito</div>
-            <div className={`badge ${ totalSum ? '' : 'badge--hidden'}`}>
-              { totalQty }
+            <div className={`badge ${ sumPizzas(total) ? '' : 'badge--hidden'}`}>
+              { sumQty(total) }
               <div className="badge--tooltip">
-                { `Sub-total $${locale(totalSum)}` }
+                { `Sub-total $${locale(sumPizzas(total))}` }
               </div>
             </div>
           </NavLink>

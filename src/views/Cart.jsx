@@ -80,7 +80,7 @@ export default function Cart() {
         { <div className="cart__final--pay"> <strong>Total: ${sumQty(total) >= 3 ? locale(sumPizzas(total) + deliveryFee(total) - salePrice(total)) : locale(sumPizzas(total) + deliveryFee(total))} </strong></div> }
         <div className="cart__final--btns">
           <button className="btn btn--info-back" onClick={ () => goBack(`/pizza/`) }>Volver</button>
-          <button className="btn btn--info-add" onClick={ () => console.log('Acá iría un botón de pago') }>Pagar</button>
+          <button className="btn btn--info-add" onClick={ () => alert('Acá te llevaría al portal de pagos') }>Pagar</button>
         </div>
       </div>
     </div>
