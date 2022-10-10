@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import PizzaContext from "../PizzaContext";
 import Images from "../images";
-import { locale, capitalize } from "../helpers";
+import { locale, capitalize, sumPizzas, sumQty, deliveryFee } from "../helpers";
 
 export default function Cart() {
 
@@ -21,13 +21,15 @@ export default function Cart() {
     return list;
   };
 
+  const salePrice = (total) => sumQty(total) >= 3 ? sumPizzas(total) * 0.1 : 0;
+
   if (total.length === 0) {
     return (
       <div className="container container--cart">
         <h1>El carrito está vacio</h1>
         <p>¡No olvides agregar tus pizzas favoritas!</p>
         <img src={ Images.logo } alt="¡Pizzería Mamma Mía!" className="logo--big" />
-        <button className="btn btn--info-back btn--detail" onClick={ () => goBack(`/pizzas/`) }>Volver</button>
+        <button className="btn btn--info-back btn--detail" onClick={ () => goBack(`/pizza/`) }>Volver</button>
       </div>
     );
   };
@@ -65,8 +67,21 @@ export default function Cart() {
           </div>
         ))}
       </div>
-      <div className="cart__total">
-        { `El total es: $${locale(total.reduce((a, b)=> a + b.price,0))}` }
+      <div className="cart__final container--flex">
+        { <div className="cart__final--subt"> Sub-total: <strong>${locale(sumPizzas(total))}</strong> </div> }
+        { <div className="cart__final--delivery"> 
+          { deliveryFee(total) > 0 ? <span className="cart__final--delivery">Despacho: ${locale(deliveryFee(total))}</span> : <span className="cart__final--delivery">Despacho: <strong>¡Grátis!</strong></span> }
+          { <div className="cart__final--t-delivery">¡Por compras arriba de <strong>$11.990</strong> ten <strong>despacho gratis!</strong></div> }
+        </div> }
+        { <div className="cart__final--sale">
+          { salePrice(total) >= 3 ? <span className="cart__final--sale">Descuento: <strong>${locale(salePrice(total))}</strong></span> : '' } 
+          { <div className="cart__final--t-sale">Si llevas <strong>3 pizzas o más</strong>, ¡ten un <strong>10% de descuento!</strong></div> }
+        </div> }
+        { <div className="cart__final--pay"> <strong>Total: ${sumQty(total) >= 3 ? locale(sumPizzas(total) + deliveryFee(total) - salePrice(total)) : locale(sumPizzas(total) + deliveryFee(total))} </strong></div> }
+        <div className="cart__final--btns">
+          <button className="btn btn--info-back" onClick={ () => goBack(`/pizza/`) }>Volver</button>
+          <button className="btn btn--info-add" onClick={ () => console.log('Acá iría un botón de pago') }>Pagar</button>
+        </div>
       </div>
     </div>
   );

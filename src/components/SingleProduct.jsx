@@ -45,7 +45,7 @@ export default function SingleProduct() {
                 { locale(filtered.price) }
               </h2>
               <div className="btn--wrapper__detail">
-                <button className="btn btn--info-back btn--detail" onClick={ () => pizzaLink(`/pizzas/`) }>Volver</button>
+                <button className="btn btn--info-back btn--detail" onClick={ () => pizzaLink(`/pizza/`) }>Volver</button>
                 <button className="btn btn--info-add btn--detail" onClick={ () => addItem(filtered) }>Añadir</button>
               </div>
             </div>

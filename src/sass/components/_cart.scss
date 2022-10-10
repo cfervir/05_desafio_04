@@ -66,6 +66,68 @@
     }
   }
 
+  &__final {
+    font-size: 1.063rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: right;
+
+    &--delivery,
+    &--sale {
+      position: relative;
+    }
+    
+    &--delivery:hover &--t-delivery,
+    &--sale:hover &--t-sale {
+      position: absolute;
+      top: -4px;
+      padding: 0.65em 1em;
+      box-shadow: 0px 0px 0px 3px inset rgb(190 0 0),
+                  0px 2px 4px 0px rgb(135 135 135 / 50%);
+      background-color: #ffffff;
+      color: rgb(190, 0, 0);
+      border-radius: 0.5em;
+      font-size: 0.75rem;
+      display: block;
+      opacity: 1;
+    }
+
+    &--delivery:hover &--t-delivery {
+      right: 9.375rem;
+    }
+
+    &--sale:hover &--t-sale {
+      right: 10rem;
+    }
+
+    &--t-delivery,
+    &--t-sale {
+      opacity: 0;
+      display: none;
+      text-align: center;
+    }
+
+    &--t-delivery:hover,
+    &--t-delivery:focus,
+    &--t-sale:hover,
+    &--t-sale:focus {
+      opacity: 0;
+      display: none;
+    }
+
+    &--pay {
+      font-size: 1.125rem;
+    }
+
+    &--btns {
+      margin-top: 0.5em;
+
+      & + & {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
   @media (min-width: 425px) {
     &__items {
       flex-direction: row;
@@ -102,9 +164,6 @@
       &--total {
         margin-right: 1em;
         margin-bottom: 0;
-      }
-      
-      &--buttons {
       }
     }
   }
